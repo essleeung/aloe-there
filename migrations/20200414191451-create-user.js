@@ -21,14 +21,8 @@ module.exports = {
       password: {
         type: Sequelize.STRING
       },
-      bio: {
-        type: Sequelize.TEXT
-      },
       username: {
         type: Sequelize.STRING
-      },
-      birthday: {
-        type: Sequelize.DATE
       },
       admin: {
         type: Sequelize.BOOLEAN,
@@ -36,10 +30,13 @@ module.exports = {
       },
       pic: {
         type: Sequelize.STRING,
-        defaultValue: 'http://placekitten.com/200/200'
+        defaultValue: 'https://i.imgur.com/jIRfaSu.jpg'
       },
-      zipcode: {
-        type: Sequelize.INTEGER
+      country: {
+        type: Sequelize.STRING
+      },
+      city: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

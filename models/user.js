@@ -13,7 +13,15 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-    lastname: DataTypes.STRING,
+    lastname:{
+      type: DataTypes.STRING,
+      validate: {
+        len: {
+          args: [1, 255],
+          msg: 'Oh, you don\'t have a last name??'
+        }
+      }
+    },
     email: {
       type: DataTypes.STRING,
       validate: {
@@ -31,12 +39,11 @@ module.exports = (sequelize, DataTypes) => {
          }
        }
     },
-    bio: DataTypes.TEXT,
     username: DataTypes.STRING,
-    birthday: DataTypes.DATE,
     admin: DataTypes.BOOLEAN,
-    pic: DataTypes.STRING,
-    zipcode: DataTypes.INTEGER
+    pic: DataTypes.STRING, 
+    country: DataTypes.STRING,
+    city: DataTypes.STRING
   }, {
     hooks: {
       beforeCreate: pendingUser => {
