@@ -2,10 +2,11 @@ let request = require('request')
 let cheerio = require('cheerio')
 let async = require('async')
 let db = require('./models')
-
+//go through all the site pages
 let baseUrl = 'https://interiorplants.ca/product-category/plants/'
 
-//go through all the site pages to scrape plant name, category and pic
+
+
 const scrape = () => {
     let urlArray = []
     for (let i = 1; i <= 17; i++) {
@@ -19,6 +20,7 @@ const scrape = () => {
     async.forEach(urlArray, (fullUrl, done) => {
         request(fullUrl, (error, response, body) => {
             let $ = cheerio.load(body)
+
             let plants = $('.box').map((i, el) => {
                 return {
                     commonName: $(el).find('.title-wrapper > .product-title > a').text(),
@@ -49,11 +51,6 @@ const scrape = () => {
         })
 
     }, () => { process.exit() })
-
-
-
-
-
 }
 
 
