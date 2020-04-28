@@ -1,12 +1,15 @@
 <nav>
-    <div class="nav-wrapper indigo accent-1">
-        <a href="#!" class="brand-logo"></i>&nbsp ALOE THERE</a>
+    <div class="nav-wrapper cyan darken-4">
+        <a href="/plantopedia" class="brand-logo">&nbsp ALOE THERE</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="/">Home</a></li>
             <% if (currentUser) { %>
             <li>
-                <a href="/profile/user">Profile Page</a>
+                <a href="/plantopedia">Plantopedia</a>
+            </li>
+            <li>
+                <a href="/profile/user">My Profile</a>
             </li>
             <% if (currentUser.admin) { %>
             <li>
@@ -32,7 +35,10 @@
         <li><a href="/">Home</a></li>
         <% if (currentUser) { %>
         <li>
-            <a href="/profile/user">Profile Page</a>
+            <a href="/plantopedia">Plantopedia</a>
+        </li>
+        <li>
+            <a href="/profile/user">My Profile</a>
         </li>
         <% if (currentUser.admin) { %>
         <li>

@@ -1,7 +1,10 @@
+require('dotenv').config()
 // Node Modules/Variables
 let router = require('express').Router()
 let db = require('../models')
 let passport = require('../config/passportConfig')
+let mapURL = `https://maps.googleapis.com/maps/api/js?key=${process.env.GMAP_API}&libraries=places&callback=initAutocomplete` 
+
 
 // Routes
 // GET /auth/login - this is a page that renders the login form
@@ -19,18 +22,19 @@ router.post('/login', passport.authenticate('local', {
 
 // GET /auth/signup - this is a page that renders the signup form
 router.get('/signup', (req, res) => {
-    res.render('auth/signup', { data: {} })
+    res.render('auth/signup', { data: {}, mapURL })
 })
 
 // POST /auth/signup
 router.post('/signup', (req, res, next) => {
     console.log('REQUEST BODY', req.body)
+    req.body.pic = req.body.pic || 'https://i.imgur.com/jIRfaSu.jpg'
     if (req.body.password !== req.body.password_verify) {
         // Send a message on why things didn't work
         req.flash('error', 'Passwords do not match!')
 
         // Put the user back onto the signup form to try again
-        res.render('auth/signup', { data: req.body, alerts: req.flash() })
+        res.render('auth/signup', { data: req.body, alerts: req.flash(), mapURL })
     }
     else {
         // Passwords matched, now we'll find/create by the user's email
@@ -68,7 +72,7 @@ router.post('/signup', (req, res, next) => {
                 })
                 
                 // Put the user back onto the signup form to try again
-                res.render('auth/signup', { data: req.body, alerts: req.flash() })
+                res.render('auth/signup', { data: req.body, alerts: req.flash(), mapURL })
             }
             else {
                 // Generic message for any other issue

@@ -1,4 +1,4 @@
-<footer class="page-footer indigo accent-2">
+<footer class="page-footer cyan darken-4">
   <div class="container">
     <div class="row">
       <div class="col l6 s12">
@@ -8,17 +8,34 @@
       <div class="col l4 offset-l2 s12">
         <h5 class="white-text">Links</h5>
         <ul>
-          <li><a class="grey-text text-lighten-3" href="/">Home</a></li>
-          <li><a class="grey-text text-lighten-3" href="/auth/login">Login</a></li>
-          <li><a class="grey-text text-lighten-3" href="/auth/signup">Sign up</a></li>
-          <li><a class="grey-text text-lighten-3" href="/auth/logout">Logout</a></li>
+          <li><a href="/" class="white-text">Home</a></li>
+            <% if (currentUser) { %>
+            <li>
+                <a href="/profile/user" class="white-text">My Profile</a>
+            </li>
+            <% if (currentUser.admin) { %>
+            <li>
+                <a href="/profile/admin" class="white-text">Admin Page</a>
+            </li>
+            <% } %>
+            <li>
+                <a href="/auth/logout" class="white-text">Logout</a>
+            </li>
+            <% } else { %>
+            <li>
+                <a href="/auth/login" class="white-text">Login</a>
+            </li>
+            <li>
+                <a href="/auth/signup" class="white-text">Sign Up</a>
+            </li>
+            <% } %>
         </ul>
       </div>
     </div>
   </div>
   </div>
   <div class="footer-copyright">
-    <div>&nbsp&nbsp Made with 💚 by Sharon Lee </div>
+    <div>&nbsp&nbsp &copy; Sharon Lee </div>
   </div>
 
 </footer>

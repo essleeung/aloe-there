@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-    lastname:{
+    lastname: {
       type: DataTypes.STRING,
       validate: {
         len: {
@@ -26,25 +26,29 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       validate: {
         isEmail: {
-          msg: 'Please give a valid email 🤨'
+          msg: 'Please provide a valid email 🤨'
         }
       }
     },
     password: {
-       type: DataTypes.STRING,
-       validate: {
-         len: {
-           args: [6, 32], 
-           msg: 'Password must be between 6 and 32 characters'
-         }
-       }
+      type: DataTypes.STRING,
+      validate: {
+        len: {
+          args: [6, 32],
+          msg: 'Password must be between 6 and 32 characters'
+        }
+      }
     },
     username: DataTypes.STRING,
     admin: DataTypes.BOOLEAN,
-    pic: DataTypes.STRING, 
+    pic: DataTypes.STRING,
+    street_number: DataTypes.STRING,
+    route: DataTypes.STRING,
+    city: DataTypes.STRING,
+    state: DataTypes.STRING,
+    zipcode: DataTypes.STRING,
     country: DataTypes.STRING,
-    city: DataTypes.STRING
-  }, {
+    }, {
     hooks: {
       beforeCreate: pendingUser => {
         //hash the password
@@ -54,14 +58,14 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   });
-  user.associate = function(models) {
+  user.associate = function (models) {
     // associations can be defined here
   };
 
-  user.prototype.validPassword = function(typedInPassword) {
+  user.prototype.validPassword = function (typedInPassword) {
     //Determine if the password typed in hashes to the same thing as the existing hash (returns a boolean?)
     let correctPassword = bcrypt.compareSync(typedInPassword, this.password)
-    
+
     //Return the (boolean) result of the comparison 
     return correctPassword
   }

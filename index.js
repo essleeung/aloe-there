@@ -61,6 +61,7 @@ app.use((req, res, next) => {
 //controllers
 app.use('/auth', require('./controllers/auth'))
 app.use('/profile', require('./controllers/profile'))
+app.use('/plantopedia', require('./controllers/plantopedia'))
 
 //create a home page route
 app.get('/', (req,res) => {

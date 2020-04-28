@@ -11,4 +11,8 @@ html, body {
   main {
     flex: 1 0 auto;
   }
-      
+  
+.circle {
+  height: 50%;
+  width: 50%;
+}

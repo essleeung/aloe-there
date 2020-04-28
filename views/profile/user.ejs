@@ -1,21 +1,31 @@
-<h1><%=currentUser.firstname%>'s Profile</h1>
+<div class="container">
+    <h1><%=currentUser.firstname%>'s Profile</h1>
 
 <div class="row">
-    <div class="col s4">
-        <img src="<%=currentUser.pic%>" alt="profile pic">
+    <div class="col s6" id="profilePic">
+        <% if (currentUser.pic) { %>
+            <img class="circle"src="<%=currentUser.pic%>" alt="profile pic">
+         <% } else { %>
+            <img class="circle"src="https://i.imgur.com/jIRfaSu.jpg" alt="profile pic">
+        <% } %>
+
     </div>
-    <div class="col s4">
+    <div class="col s6">
         <p>
             <strong>Name:</strong> <%= currentUser.firstname%> <%=currentUser.lastname%>
         </p>
         <p>
-            <strong>Birthday:</strong> <%=moment(currentUser.birthday).format('MMM Do[,] YYYY')%>
+            <strong>Username:</strong> <%= currentUser.username%> 
         </p>
         <p>
-            <strong>Account created on: </strong><%=moment(currentUser.createdAt).format('MMM Do[,] YYYY')%>
+            <strong>Location:</strong> <%=currentUser.city%>, <%=currentUser.country%>
+        </p>
+        <p>
+            <strong>Member since: </strong><%=moment(currentUser.createdAt).format('MMM Do[,] YYYY')%>
         </p>
         <p>
             <%=currentUser.bio%>
         <p>
     </div>
+</div>
 </div>
