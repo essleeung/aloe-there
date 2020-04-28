@@ -1,11 +1,14 @@
 let router = require('express').Router()
 let db = require('../models')
-let getResults = require('../scraper')
 
-
+//GET / -returns all plants in database
 router.get('/', (req, res) => {
-    const result = await getResults()
-    res.render('plants/index', {result})
+    db.plant.findAll()
+    .then(result => {
+        res.render('plants/index', {result})
+    })
+    .catch(err => {
+    })  
 })
 
 module.exports = router

@@ -2,9 +2,10 @@ let request = require('request')
 let cheerio = require('cheerio')
 let async = require('async')
 let db = require('./models')
-//go through all the site pages
+
 let baseUrl = 'https://interiorplants.ca/product-category/plants/'
 
+//go through all the site pages to scrape plant name, category and pic
 const scrape = () => {
     let urlArray = []
     for (let i = 1; i <= 17; i++) {

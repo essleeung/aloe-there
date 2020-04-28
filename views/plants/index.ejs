@@ -1,7 +1,12 @@
 <div class="container">
     <h1>Plantopedia</h1>
-    names<%=result.names%>
-    categories <%=result.categories%>
-    links <%=result.links%>
+    <div class="row center-align">
+        <% result.forEach(p => { %>
+        <div class="col m4">
+            <img class="round-square" src="<%=p.pic%>" alt="plant pic">
+            <p><a class="center-align" href="<%=p.link%>"><%=p.commonName%></a></p>
+        </div>
+        <% }) %>
+    </div>
 
 </div>
