@@ -24,7 +24,7 @@ const scrape = () => {
             let plants = $('.box').map((i, el) => {
                 return {
                     commonName: $(el).find('.title-wrapper > .product-title > a').text(),
-                    link: $(el).find('a').attr('href'),
+                    link: $(el).find('a').attr('href').trim(),
                     category: $(el).find('.title-wrapper > .category').text().trim(), 
                     pic: $(el).find('.size-woocommerce_thumbnail').attr('src') 
                 }
