@@ -1,15 +1,21 @@
 html, body {
     padding: 0;
     margin: 0;
+    font-family: serif;
+
+    
 }
   body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    background-image: linear-gradient(rgb(0,0,0,0.3), rgba(0,0,0,0.3))
+
   }
 
   main {
     flex: 1 0 auto;
+    font-family: serif;
   }
   
 .circle {
@@ -19,4 +25,43 @@ html, body {
 
 .round-square {
   border-radius: 25px;
+}
+#top-round {
+  border-radius: 25px 25px 0 0;
+}
+
+.hero-image {
+  background-image: linear-gradient(rgb(0,0,0,0.3), rgba(0,0,0,0.3)), url("../assets/aloe-hero.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+}
+
+.hero-txt {
+  font-family: serif;
+  position:absolute;
+  top: 50%;
+  left: 30%;
+}
+nav, .navbar-fixed{
+  background-color: rgba(255, 255, 255, 0.0);
+  position: absolute;
+}
+.mt5 {
+  margin-top: 5%;
+
+}
+
+.mt2 {
+  margin-top: 2%;
+
+}
+
+.page-footer {
+  background-color: rgba(0,0,0,0.7);
+}
+.footer-copyright {
+  background-color: black;
 }

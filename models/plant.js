@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   plant.associate = function(models) {
     // associations can be defined here
-    // models.plant.belongsToMany(models.category, {through: 'plant_category'})
+    models.plant.belongsToMany(models.user, {through: "wishlist"})
 
   };
   return plant;

@@ -1,12 +1,55 @@
-<div class="container">
+<div class="container mt5">
     <h1>Plantopedia</h1>
-    <div class="row center-align">
+    <div class="row">
         <% result.forEach(p => { %>
-        <div class="col m4">
-            <img class="round-square" src="<%=p.pic%>" alt="plant pic">
-            <p><a class="center-align" href="<%=p.link%>"><%=p.commonName%></a></p>
+        <div class="col s4">
+            <div class="card round-square">
+                <div class="card-image">
+                    <img src="<%=p.pic%>" id="top-round">
+                    <form action="/profile/user" method="POST" class="faveForm">
+                        <input type="text" name="plantId" value="<%=p.id%>" hidden>
+                        <input type="text" name="userId" value="<%=currentUser.id%>" hidden>
+                        <button class="btn-floating halfway-fab waves-effect waves-light teal"  type="submit"><i
+                            class="material-icons">favorite_border</i></button>
+                    </form>
+                </div>
+                <div class="card-content">
+                    <p><a href=""><%=p.commonName%></a></p>
+                </div>
+                
+            </div>
         </div>
         <% }) %>
     </div>
-
 </div>
+
+
+<script>
+
+        [...document.getElementsByClassName("faveForm")].forEach(form => {
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault()
+                // x = document.getElementsByClassName("fave")
+                let plantId = e.target.children[0].value
+                let userId = e.target.children[1].value
+                if (e.target.children[2].textContent == "favorite_border") {
+                    console.log(e.target.children[0].value)
+                    fetch(e.target.action, {
+                        method: "POST",
+                        body: JSON.stringify({plantId: plantId, userId: userId}),
+                        headers: {
+                            "Content-Type": "application/json"
+                        }
+                    })
+                    .then(result => {
+                        console.log("success!", result)
+                        e.target.children[2].children[0].textContent = 'favorite'
+                    })
+                    .catch(err => {
+                        console.log("form error---", err)
+                    })
+                }
+            })
+        })
+</script>

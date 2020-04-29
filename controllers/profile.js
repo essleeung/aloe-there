@@ -34,4 +34,21 @@ router.get('/admin', adminLogin, (req,res) => {
     })
 })
 
+//POST /profile/user/- add plant to wishlist
+router.post('/user', (req,res) => {
+    console.log(req.body)
+    db.wishlist.create(req.body)
+    .then(() => {
+        res.send({message: "success!"})
+    })
+    .catch(err => {
+        
+        console.log('Error on creating wishlist', err)
+        res.status(500).send({message: "error!"})
+    })
+})
+
+//POST /profile/user - remove plant from wishlist
+
+
 module.exports = router

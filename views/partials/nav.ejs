@@ -1,8 +1,35 @@
-<nav>
-    <div class="nav-wrapper cyan darken-4">
-        <a href="/plantopedia" class="brand-logo">&nbsp ALOE THERE</a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
+<div class="navbar-fixed white">
+    <nav>
+        <div class="nav-wrapper">
+            <a href="/plantopedia" class="brand-logo"></a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/">Home</a></li>
+                <% if (currentUser) { %>
+                <li>
+                    <a href="/plantopedia">Plantopedia</a>
+                </li>
+                <li>
+                    <a href="/profile/user">My Profile</a>
+                </li>
+                <% if (currentUser.admin) { %>
+                <li>
+                    <a href="/profile/admin">Admin Page</a>
+                </li>
+                <% } %>
+                <li>
+                    <a href="/auth/logout">Logout</a>
+                </li>
+                <li><span>Hi, <%=currentUser.firstname%> &nbsp&nbsp</span></li>
+                <% } else { %>
+                <li>
+                    <a href="/auth/login">Login</a>
+                </li>
+                <% } %>
+            </ul>
+        </div>
+    
+        <ul class="sidenav" id="mobile-demo">
             <li><a href="/">Home</a></li>
             <% if (currentUser) { %>
             <li>
@@ -19,7 +46,6 @@
             <li>
                 <a href="/auth/logout">Logout</a>
             </li>
-            <li><span>Hi, <%=currentUser.firstname%> &nbsp&nbsp</span></li>
             <% } else { %>
             <li>
                 <a href="/auth/login">Login</a>
@@ -29,32 +55,5 @@
             </li>
             <% } %>
         </ul>
-    </div>
-
-    <ul class="sidenav" id="mobile-demo">
-        <li><a href="/">Home</a></li>
-        <% if (currentUser) { %>
-        <li>
-            <a href="/plantopedia">Plantopedia</a>
-        </li>
-        <li>
-            <a href="/profile/user">My Profile</a>
-        </li>
-        <% if (currentUser.admin) { %>
-        <li>
-            <a href="/profile/admin">Admin Page</a>
-        </li>
-        <% } %>
-        <li>
-            <a href="/auth/logout">Logout</a>
-        </li>
-        <% } else { %>
-        <li>
-            <a href="/auth/login">Login</a>
-        </li>
-        <li>
-            <a href="/auth/signup">Sign Up</a>
-        </li>
-        <% } %>
-    </ul>
-</nav>
+    </nav>
+</div>

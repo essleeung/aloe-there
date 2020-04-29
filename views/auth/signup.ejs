@@ -1,5 +1,8 @@
-<div class="container">
-    <h1>Signup</h1>
+<link rel="stylesheet" href="/css/signup.css">
+
+<div class="container mt5">
+    <div class="sticky vertical-align">
+        <h1>signup</h1>
     <p>New around here? </p>
     <div class="row">
         <form class="col s12" method="POST" action="/auth/signup">
@@ -46,10 +49,10 @@
             </div> 
             <div class="row">
                 <div class="input-field col s4">
-                    <input class="field" name="street_number" id="street_number" type="text" disabled="true" placeholder="Address">
+                    <input class="field" name="street_number" id="street_number" type="text" disabled="true" placeholder="#">
                 </div>
                 <div class="input-field col s8">
-                    <input class="field" name="route" id="route" type="text" disabled="true">
+                    <input class="field" name="route" id="route" type="text" disabled="true" placeholder="Street">
                 </div>
             </div>
             <div class="row">
@@ -68,6 +71,7 @@
             </div>
             <button class="btn waves-effect waves-light teal accent-4" type="button" onclick="this.form.submit()">Sign up</button>
         </form>
+    </div>
     </div>
 </div>
 

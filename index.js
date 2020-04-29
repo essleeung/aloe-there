@@ -30,6 +30,7 @@ app.use(express.static('static'))
 
 //decrypt the variables coming in via POST routes (from forms)
 app.use(express.urlencoded({extended: false}))
+app.use(express.json())
 
 //set up sessions- store data about a user and their browsing session
 app.use(session({
