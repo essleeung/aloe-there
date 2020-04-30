@@ -1,10 +1,7 @@
 <div class="container mt5">
     <h1>Plantopedia</h1>
     <div class="row">
-
-        <% faves.forEach(f => { %>
-         PLANT IDS: <%=f.plantId%>
-        <% }) %>
+        
 
         <% result.forEach(p => { %>
         <div class="col s4">
@@ -22,11 +19,12 @@
                         <button class="btn-floating halfway-fab waves-effect waves-light teal"  type="submit"><i
                             class="material-icons">favorite_border</i></button>
                             <% } %>
+                            PLANTS IDS: <%=f.plantId%>, <%=p.id%>
                         <% }) %>
                     </form>
                 </div>
                 <div class="card-content">
-                    <p><a href=""><%=p.commonName%></a></p>
+                    <p><a href="/plantopedia/<%=p.id%>"><%=p.commonName%></a></p>
                 </div>
                 
             </div>
@@ -42,7 +40,7 @@
 
             form.addEventListener('submit', (e) => {
                 e.preventDefault()
-                // x = document.getElementsByClassName("fave")
+                console.log("WHY??", e.target.children[2].textContent)
                 let plantId = e.target.children[0].value
                 let userId = e.target.children[1].value
                 if (e.target.children[2].textContent == "favorite_border") {

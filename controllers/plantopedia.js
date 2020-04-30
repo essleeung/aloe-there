@@ -29,4 +29,13 @@ router.get('/', (req, res) => {
     })  
 })
 
+//GET/:ID - returns one specific plant
+router.get('/:id', (req, res) => {
+    console.log(req.params.id)
+    db.plant.findByPk(req.params.id)
+    .then(result => {
+        res.render('plants/show', {result})
+    })
+})
+
 module.exports = router
