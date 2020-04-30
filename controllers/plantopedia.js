@@ -11,6 +11,7 @@ router.get('/', (req, res) => {
     })
     .then(result => {
         console.log("USER:", req.user)
+        //returns user's favorites
         db.wishlist.findAll(
             { where: {
                 userId: req.user.id

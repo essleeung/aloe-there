@@ -1,4 +1,7 @@
-<div class="container mt5">
+<div class="whole">
+
+    <%- include('../partials/nav') %>
+<div class="container">
     <h1>Plantopedia</h1>
     <div class="row">
         <% result.forEach(p => { %>
@@ -29,7 +32,7 @@
     </div>
 </div>
 
-
+</div>
 <script>
 
         [...document.getElementsByClassName("faveForm")].forEach(form => {
@@ -51,6 +54,21 @@
                     .then(result => {
                         console.log("success!", result)
                         e.target.children[2].children[0].textContent = 'favorite'
+                    })
+                    .catch(err => {
+                        console.log("form error---", err)
+                    })
+                } else {
+                    etch(e.target.action, {
+                        method: "DELETE",
+                        body: JSON.stringify({plantId: plantId, userId: userId}),
+                        headers: {
+                            "Content-Type": "application/json"
+                        }
+                    })
+                    .then(result => {
+                        console.log("success!", result)
+                        e.target.children[2].children[0].textContent = 'favorite_border'
                     })
                     .catch(err => {
                         console.log("form error---", err)

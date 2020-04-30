@@ -50,5 +50,19 @@ router.post('/user', (req,res) => {
 
 //POST /profile/user - remove plant from wishlist
 
+router.post('/user', (req,res) => {
+    db.wishlist.destroy({
+        where: {plantId: req.params.id}
+    }})
+    .then(() => {
+        res.send({message: "success!"})
+    })
+    .catch(err => {
+        
+        console.log('Error on creating wishlist', err)
+        res.status(500).send({message: "error!"})
+    })
+})
+
 
 module.exports = router
