@@ -39,7 +39,6 @@
 
             form.addEventListener('submit', (e) => {
                 e.preventDefault()
-                // x = document.getElementsByClassName("fave")
                 let plantId = e.target.children[0].value
                 let userId = e.target.children[1].value
                 if (e.target.children[2].textContent == "favorite_border") {
@@ -59,9 +58,8 @@
                         console.log("form error---", err)
                     })
                 } else {
-                    etch(e.target.action, {
+                    fetch(e.target.action + '/' + plantId, {
                         method: "DELETE",
-                        body: JSON.stringify({plantId: plantId, userId: userId}),
                         headers: {
                             "Content-Type": "application/json"
                         }

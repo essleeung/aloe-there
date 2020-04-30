@@ -50,7 +50,7 @@ router.post('/user', (req,res) => {
 
 //POST /profile/user - remove plant from wishlist
 
-router.post('/user', (req,res) => {
+router.delete('/user/:id', (req,res) => {
     db.wishlist.destroy({
         where: {plantId: req.params.id}
     })
