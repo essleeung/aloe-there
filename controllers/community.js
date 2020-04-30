@@ -4,4 +4,8 @@ let userLogin = require('../middleware/userLogin')
 
 router.use(userLogin)
 
+
+router.get('/events', (req, res) => {
+    res.render('community/events')
+})
 module.exports = router

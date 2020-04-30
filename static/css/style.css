@@ -2,8 +2,7 @@ html, body {
     padding: 0;
     margin: 0;
     font-family: serif;
-
-    
+    background-color: rgba(0,0,0,0.1);    
 }
   body {
     display: flex;
@@ -62,37 +61,37 @@ p, .btn {
 
 
 /* ALERTS USING MATERIALIZE CHIPS */
-    .flash_message {
-        position: fixed;
-        z-index: 99999;
-        min-width: 80%;
-    }
-    .alert {
-      padding: 0;
-      margin: 0 auto;
-    }
-   
-    .chip_message_alert,
-    .chip_message_success {
-        text-align: center;
-        padding-top: 10px !important;
-        padding-bottom: 10px !important;
-        min-width: 80%;
-        min-height: 50px;
-        font-size: 1em;
-        color: white;
-    }
+.flash_message {
+  position: fixed;
+  z-index: 99999;
+  min-width: 88%;
+}
+.alert {
+  padding: 0;
+  margin: 0 auto;
+}
 
-    .chip_message_success {
-        background-color: #80cbc4 !important;
+.chip_message_alert,
+.chip_message_success {
+  text-align: center;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  min-width: 88%;
+  min-height: 50px;
+  font-size: 1em;
+  color: white;
+}
+
+.chip_message_success {
+  background-color: #80cbc4 !important;
   
-    }
+}
 
-    .chip_message_alert {
-        background-color: #ef9a9a !important;
-    }
-
-  .user-view {
-    height: 15vh;
-    opacity: 90%;
+.chip_message_alert {
+  background-color: #ef9a9a !important;
   }
+
+.user-view {
+  height: 15vh;
+  opacity: 90%;
+}

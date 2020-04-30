@@ -5,7 +5,7 @@
                 <img src="/assets/monster_unsplash.jpg">
             </div>
             <% if (currentUser) { %>
-            <a href="#"><img class="circle" src="<%=currentUser.pic%>"></a>
+            <a href="/profile/user"><img class="circle" src="<%=currentUser.pic%>"></a>
             <a href="/profile/user"><span class="white-text name">Hello, <%=currentUser.firstname%></span></a>
         </div>
         </li>
