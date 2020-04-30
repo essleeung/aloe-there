@@ -1,9 +1,3 @@
-.navbar-fixed, nav {
-    background-color: black;
-}
-input {
-    font-family: serif;
-}
 body {
     background-image: linear-gradient(rgb(0,0,0,0.4), rgba(0,0,0,0.4)), url(../assets/hal-ozart-MyRBq7GoVK0-unsplash.jpg);
     background-attachment: fixed;
@@ -11,9 +5,7 @@ body {
     background-size: cover;
 }
 
-.navbar-fixed, nav {
-    background-color: rgba(0,0,0,0.8);
-}
+
 
 .form{
     padding: 30px;

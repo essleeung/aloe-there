@@ -45,18 +45,6 @@ html, body {
   top: 50%;
   left: 30%;
 }
-nav, .navbar-fixed{
-  background-color: rgba(255, 255, 255, 0.0);
-  position: absolute;
-}
-.mt5 {
-  margin-top: 5%;
-}
-
-.mt10 {
-  margin-top: 10%;
-
-}
 
 .page-footer {
   background-color: rgba(0,0,0,0.7);
@@ -69,10 +57,15 @@ nav, .navbar-fixed{
   text-transform: none !important;
 }
 
-p, .btn, nav li a, nav li {
+p, .btn {
   font-size: 1.5em;
 }
 
 .wrapper {
   margin-top: 10%;
+}
+
+.sidenav-trigger {
+  
+  background-color: red;
 }
