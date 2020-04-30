@@ -51,11 +51,10 @@ nav, .navbar-fixed{
 }
 .mt5 {
   margin-top: 5%;
-
 }
 
-.mt2 {
-  margin-top: 2%;
+.mt10 {
+  margin-top: 10%;
 
 }
 
@@ -64,4 +63,16 @@ nav, .navbar-fixed{
 }
 .footer-copyright {
   background-color: black;
+}
+
+.btn {
+  text-transform: none !important;
+}
+
+p, .btn, nav li a, nav li {
+  font-size: 1.5em;
+}
+
+.wrapper {
+  margin-top: 10%;
 }

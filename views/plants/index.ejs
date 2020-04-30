@@ -11,16 +11,10 @@
                     <form action="/profile/user" method="POST" class="faveForm">
                         <input type="text" name="plantId" value="<%=p.id%>" hidden>
                         <input type="text" name="userId" value="<%=currentUser.id%>" hidden>
-                        <% faves.forEach(f => { %>
-                        <% if (f.plantId == p.id) { %>
-                            <button class="btn-floating halfway-fab waves-effect waves-light teal"  type="submit"><i
-                                class="material-icons">favorite</i></button>
-                        <% } else { %>
+                
                         <button class="btn-floating halfway-fab waves-effect waves-light teal"  type="submit"><i
                             class="material-icons">favorite_border</i></button>
-                            <% } %>
-                            PLANTS IDS: <%=f.plantId%>, <%=p.id%>
-                        <% }) %>
+                         
                     </form>
                 </div>
                 <div class="card-content">

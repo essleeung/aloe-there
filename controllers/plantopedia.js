@@ -36,6 +36,10 @@ router.get('/:id', (req, res) => {
     .then(result => {
         res.render('plants/show', {result})
     })
+    .catch(err => {
+        console.log("ERROR ------", err)
+    })
+
 })
 
 module.exports = router

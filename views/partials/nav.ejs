@@ -1,4 +1,14 @@
 <div class="navbar-fixed white">
+
+    <!-- dropdown-content-->
+    <ul id="communitydd" class="dropdown-content">
+        <li><a href="/community/events">events</a></li>
+        <li><a href="/community/forum">forum</a></li>
+        <li class="divider"></li>
+        <li><a href="/community/swap">for trade</a></li>
+      </ul>
+
+
     <nav>
         <div class="nav-wrapper">
             <a href="/plantopedia" class="brand-logo"></a>
@@ -11,6 +21,9 @@
                 </li>
                 <li>
                     <a href="/profile/user">My Profile</a>
+                </li>
+                <li>
+                    <a href="#!" data-target="communitydd" class="dropdown-trigger">Community</a>
                 </li>
                 <% if (currentUser.admin) { %>
                 <li>
