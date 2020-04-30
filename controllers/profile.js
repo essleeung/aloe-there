@@ -59,7 +59,7 @@ router.post('/user', (req,res) => {
     })
     .catch(err => {
         
-        console.log('Error on creating wishlist', err)
+        console.log('Error on deleting wishlist', err)
         res.status(500).send({message: "error!"})
     })
 })
