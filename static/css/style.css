@@ -65,7 +65,15 @@ p, .btn {
   margin-top: 10%;
 }
 
-.sidenav-trigger {
+.sidenav-trigger{
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  padding: 5px;
   
-  background-color: red;
+}
+
+.sidenav-trigger i {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 2.5em;
 }

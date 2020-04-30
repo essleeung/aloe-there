@@ -1,49 +1,66 @@
+<ul id="slide-out" class="sidenav">
+    <li>
+        <div class="user-view">
+            <div class="background">
+                <img src="/assets/monster_unsplash.jpg">
+            </div>
+            <% if (currentUser) { %>
+            <a href="#"><img class="circle" src="<%=currentUser.pic%>"></a>
+            <a href="/profile/user"><span class="white-text name">Hello, <%=currentUser.firstname%></span></a>
+        </div>
+        </li>
+        <li><a class="waves-effect" href="/">home</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="waves-effect" href="/plantopedia">plantopedia</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="subheader">community</a></li>
+        <li><a class="waves-effect" href="/community/events">events</a></li>
+        <li><a class="waves-effect" href="/community/events">for trade</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="waves-effect" href="/auth/logout">logout</a></li>
+    <% if (currentUser.admin) { %>
+        <li><a class="waves-effect" href="/profile/admin">admin page</a></li>
+    <% } %>
+    <% } else { %>
+        <li><a class="waves-effect" href="/">home</a></li>
+        <li><a class="waves-effect" href="/auth/signup">signup</a></li>
 
-        <ul id="slide-out" class="sidenav">
-            <li><div class="user-view">
-              <div class="background">
+        <li><a class="waves-effect" href="/auth/login">login</a></li>
+
+    <% } %>
+
+</ul>
+<ul id="slide-out" class="sidenav">
+    <li>
+        <div class="user-view">
+            <div class="background">
                 <img src="/assets/monster_unsplash.jpg">
-              </div>
-              <% if (currentUser) { %>
-                <a href="#"><img class="circle" src="<%=currentUser.pic%>"></a>
-                <a href="/profile/user"><span class="white-text name">Hello, <%=currentUser.firstname%></span></a>
-              </div></li>
-              <li><a class="waves-effect" href="/">home</a></li>
-              <li><div class="divider"></div></li>
-              <li><a class="waves-effect" href="/plantopedia">plantopedia</a></li>
-              <li><div class="divider"></div></li>
-              <li><a class="subheader">community</a></li>
-              <li><a class="waves-effect" href="/community/events">events</a></li>
-              <li><a class="waves-effect" href="/community/events">for trade</a></li>
-              <li><div class="divider"></div></li>
-              <li><a class="waves-effect" href="/auth/logout">logout</a></li>
-              <% if (currentUser.admin) { %>
-                <li><a class="waves-effect" href="/auth/login">login</a></li>
-            <% } %>
-              <% } else { %>
-                <li><a class="waves-effect" href="/profile/admin">admin page</a></li>
-              <% } %>
-                
-        </ul>
-        <ul id="slide-out" class="sidenav">
-            <li><div class="user-view">
-              <div class="background">
-                <img src="/assets/monster_unsplash.jpg">
-              </div>
-    
-              <a href="#"><img class="circle" src="/assets/aloe_profile.jpeg"></a>
-              <a href="/profile/user"><span class="white-text name"></span></a>
-            </div></li>
-            <li><a class="waves-effect" href="/plantopedia">Plantopedia</a></li>
-            <li><div class="divider"></div></li>
-            <li><a class="subheader">community</a></li>
-            <li><a class="waves-effect" href="/community/events">events</a></li>
-            <li><a class="waves-effect" href="/community/events">for trade</a></li>
-            <li><div class="divider"></div></li>
-       
-            <li><a class="waves-effect" href="/auth/logout">logout</a></li>
-       
-            <li><a class="waves-effect" href="/auth/login">login</a></li>
-    
-        </ul>
-        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            </div>
+
+            <a href="#"><img class="circle" src="/assets/aloe_profile.jpeg"></a>
+            <a href="/profile/user"><span class="white-text name"></span></a>
+        </div>
+    </li>
+    <li><a class="waves-effect" href="/plantopedia">Plantopedia</a></li>
+    <li>
+        <div class="divider"></div>
+    </li>
+    <li><a class="subheader">community</a></li>
+    <li><a class="waves-effect" href="/community/events">events</a></li>
+    <li><a class="waves-effect" href="/community/events">for trade</a></li>
+    <li>
+        <div class="divider"></div>
+    </li>
+
+    <li><a class="waves-effect" href="/auth/logout">logout</a></li>
+
+    <li><a class="waves-effect" href="/auth/login">login</a></li>
+
+</ul>
+<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons transparent menu">menu</i></a>
