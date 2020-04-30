@@ -14,9 +14,9 @@ router.get('/login', (req, res) => {
 
 // POST /auth/login - this is a place for the login form to post to
 router.post('/login', passport.authenticate('local', {
-    successFlash: 'Successful Login - Welcome Back!',
+    successFlash: 'successful login. welcome back',
     successRedirect: '/profile/user', 
-    failureFlash: 'Invalid Credentials',
+    failureFlash: 'invalid credentials',
     failureRedirect: '/auth/login'
 }))
 
@@ -31,7 +31,7 @@ router.post('/signup', (req, res, next) => {
     req.body.pic = req.body.pic || 'https://i.imgur.com/jIRfaSu.jpg'
     if (req.body.password !== req.body.password_verify) {
         // Send a message on why things didn't work
-        req.flash('error', 'Passwords do not match!')
+        req.flash('error', 'passwords do not match!')
 
         // Put the user back onto the signup form to try again
         res.render('auth/signup', { data: req.body, alerts: req.flash(), mapURL })
@@ -47,15 +47,15 @@ router.post('/signup', (req, res, next) => {
                 // Good - this was expected, they are actually NEW
                 // TODO: AUTO-LOGIN
                 passport.authenticate('local', {
-                    successFlash: 'Successful Login - Welcome Back!',
+                    successFlash: 'welcome back',
                     successRedirect: '/profile/user', 
-                    failureFlash: 'Invalid Credentials',
+                    failureFlash: 'invalid credentials',
                     failureRedirect: '/auth/login'
                 })(req, res, next)
             }
             else {
                 // Bad - this person actually already had an account (redirect them to login)
-                req.flash('error', 'Account already exists!')
+                req.flash('error', 'account already exists!')
                 res.redirect('/auth/login')
             }
         })
@@ -87,7 +87,7 @@ router.post('/signup', (req, res, next) => {
 router.get('/logout', (req,res) => {
     //remove user data from the session
     req.logout()
-    req.flash('success', 'bye bye! 👏')
+    req.flash('success', 'bye. see you next time.')
     res.redirect('/')
 })
 

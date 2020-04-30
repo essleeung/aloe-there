@@ -9,8 +9,9 @@ body {
 
 .form{
     padding: 30px;
-    margin-top: 25%;
+    margin-top: 10vh;
    background-color: rgba(206, 228, 225, 0.3);
+   height: 45vh;
 }
 
 button, input {

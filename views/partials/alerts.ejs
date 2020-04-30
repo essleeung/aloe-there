@@ -1,21 +1,25 @@
 <!-- Error alerts -->
 <% if (alerts && alerts.error) { %>
-<div class="card red lighten-3" style="margin-top: 0">
-    <div class="card-content" style="padding: 10px">
-        <% alerts.error.forEach(e => { %>
-        <p>Error: <%= e %></p>
-        <% }) %>
+<div class="container">
+    <div class="flash_message">
+        <div class="chip chip_message_alert">
+            <% alerts.error.forEach(e => { %>
+            <p class="alert">Error: <%= e %><i class="close material-icons">close</i></p>
+            <% }) %>
+        </div>
     </div>
 </div>
 <% } %>
 
 <!-- success alerts -->
 <% if (alerts && alerts.success) { %>
-<div class="card green lighten-3" style="margin-top: 0">
-    <div class="card-content" style="padding: 10px">
+   <div class="container">
+    <div class="flash_message">
+        <div class="chip chip_message_success">
         <% alerts.success.forEach(e => { %>
-        <p><%= e %></p>
+        <p class="alert"><%= e %><i class="close material-icons">close</i></p>
         <% }) %>
     </div>
 </div>
+   </div>
 <% } %>

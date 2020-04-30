@@ -40,13 +40,13 @@ html, body {
 }
 
 p, .btn {
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
 .wrapper {
   margin-top: 10%;
 }
-
+ /* SIDE NAV STYLES */
 .sidenav-trigger{
   display: inline-block;
   width: 1em;
@@ -57,5 +57,42 @@ p, .btn {
 
 .sidenav-trigger i {
   color: rgba(255, 255, 255, 0.5);
-  font-size: 2.5em;
+  font-size: 1.5em;
 }
+
+
+/* ALERTS USING MATERIALIZE CHIPS */
+    .flash_message {
+        position: fixed;
+        z-index: 99999;
+        min-width: 80%;
+    }
+    .alert {
+      padding: 0;
+      margin: 0 auto;
+    }
+   
+    .chip_message_alert,
+    .chip_message_success {
+        text-align: center;
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+        min-width: 80%;
+        min-height: 50px;
+        font-size: 1em;
+        color: white;
+    }
+
+    .chip_message_success {
+        background-color: #80cbc4 !important;
+  
+    }
+
+    .chip_message_alert {
+        background-color: #ef9a9a !important;
+    }
+
+  .user-view {
+    height: 15vh;
+    opacity: 90%;
+  }
