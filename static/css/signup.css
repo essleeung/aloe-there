@@ -1,27 +1,26 @@
 body {
     background-image: linear-gradient(rgb(0,0,0,0.4), rgba(0,0,0,0.4)), url(../assets//monster_unsplash.jpg);
-    background-attachment: cover;
+    background-attachment: fixed;
     background-repeat: no-repeat;
+    background-size: cover;
 
 }
-form {
-    padding: 30px;
-}
 
-.sticky {
-    background-color: rgba(206, 228, 225, 0.8);
-    padding: 10px 30px 20px;
-    position: sticky;
-    position: -webkit-sticky;
-    top: 15px;
-}
-.navbar-fixed, nav {
-    background-color: rgba(0,0,0,0.8);
-}
 .field::placeholder, 
 #autocomplete::placeholder, 
 #autocomplete, 
-input{
+input-field, 
+button, input, label {
     font-family: serif;
-    color: grey;
+    color: black;
+}
+
+.form{
+    padding: 10px 20px 10px;
+    margin-top: 5%;
+    background-color: rgba(206, 228, 225, 0.7);
+}
+
+.title {
+    color: white;
 }

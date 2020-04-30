@@ -1,4 +1,24 @@
-.navbar-fixed, nav {
-    background-color: black;
+body {
+    background-image: linear-gradient(rgb(0,0,0,0.4), rgba(0,0,0,0.4)), url(../assets/hal-ozart-MyRBq7GoVK0-unsplash.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
+
+
+.form{
+    padding: 30px;
+    margin-top: 10vh;
+   background-color: rgba(206, 228, 225, 0.3);
+   height: 45vh;
+}
+
+button, input {
+    font-family: serif;
+    font-size: 1.5em;
+}
+
+.center-align {
+    color: white;
+}

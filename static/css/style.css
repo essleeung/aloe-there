@@ -2,15 +2,12 @@ html, body {
     padding: 0;
     margin: 0;
     font-family: serif;
-
-    
+    background-color: rgba(0,0,0,0.1);    
 }
   body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background-image: linear-gradient(rgb(0,0,0,0.3), rgba(0,0,0,0.3))
-
   }
 
   main {
@@ -30,38 +27,75 @@ html, body {
   border-radius: 25px 25px 0 0;
 }
 
-.hero-image {
-  background-image: linear-gradient(rgb(0,0,0,0.3), rgba(0,0,0,0.3)), url("../assets/aloe-hero.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  height: 100vh;
-}
-
-.hero-txt {
-  font-family: serif;
-  position:absolute;
-  top: 50%;
-  left: 30%;
-}
-nav, .navbar-fixed{
-  background-color: rgba(255, 255, 255, 0.0);
-  position: absolute;
-}
-.mt5 {
-  margin-top: 5%;
-
-}
-
-.mt2 {
-  margin-top: 2%;
-
-}
-
 .page-footer {
   background-color: rgba(0,0,0,0.7);
 }
 .footer-copyright {
   background-color: black;
+}
+
+.btn {
+  text-transform: none !important;
+}
+
+p, .btn {
+  font-size: 1.2em;
+}
+
+.wrapper {
+  margin-top: 10%;
+}
+ /* SIDE NAV STYLES */
+.sidenav-trigger{
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  padding: 1em;
+  
+}
+
+.sidenav-trigger i {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.5em;
+}
+
+
+/* ALERTS USING MATERIALIZE CHIPS */
+.flash_message {
+  position: fixed;
+  z-index: 99999;
+  min-width: 88%;
+}
+.alert {
+  padding: 0;
+  margin: 0 auto;
+}
+
+.chip_message_alert,
+.chip_message_success {
+  text-align: center;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  min-width: 88%;
+  min-height: 50px;
+  font-size: 1em;
+  color: white;
+}
+
+.chip_message_success {
+  background-color: #80cbc4 !important;
+  
+}
+
+.chip_message_alert {
+  background-color: #ef9a9a !important;
+  }
+
+.user-view {
+  height: 15vh;
+  opacity: 90%;
+}
+
+.whole {
+  min-height: 100vh;
 }
