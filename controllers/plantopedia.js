@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
         })
         .then(faves => {
             console.log("FAVES", faves)
-            res.render('plants/index', {result, faves})
+            res.render('plants/index', {result, faves: faves.map(f => f.plantId)})
         })
         .catch(err => {
             console.log("ERROR in faves", err)
@@ -27,19 +27,6 @@ router.get('/', (req, res) => {
     .catch(err => {
         console.log("ERROR in get", err)
     })  
-})
-
-//GET/:ID - returns one specific plant
-router.get('/:id', (req, res) => {
-    console.log(req.params.id)
-    db.plant.findByPk(req.params.id)
-    .then(result => {
-        res.render('plants/show', {result})
-    })
-    .catch(err => {
-        console.log("ERROR ------", err)
-    })
-
 })
 
 module.exports = router
