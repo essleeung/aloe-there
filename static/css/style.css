@@ -95,3 +95,7 @@ p, .btn {
   height: 15vh;
   opacity: 90%;
 }
+
+.whole {
+  min-height: 100vh;
+}
