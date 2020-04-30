@@ -53,7 +53,7 @@ router.post('/user', (req,res) => {
 router.post('/user', (req,res) => {
     db.wishlist.destroy({
         where: {plantId: req.params.id}
-    }})
+    })
     .then(() => {
         res.send({message: "success!"})
     })
