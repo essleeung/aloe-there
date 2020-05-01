@@ -12,17 +12,17 @@ router.get('/events', (req, res) => {
         order: ['date']
     })
     .then(events => {
-        res.render('community/events', {events})
+        res.render('community/events', {events, mapURL})
     })
     .catch(err => {      
         console.log('Error on creating an event post', err)
-        res.status(500).send({message: "error!", err})
+        res.status(500).send({message: "error!"})
     })
 })
 
 // GET - render event form for user to fill in
 router.get('/events/create', (req, res) => {
-res.render('community/create', {mapURL})
+    res.render('community/create', {mapURL})
 })
 
 // POST - add event form data to database
@@ -33,7 +33,7 @@ router.post('/events', (req, res) => {
     })
     .catch(err => {      
         console.log('Error on creating an event post', err)
-        res.status(500).send({message: "error!"})
+        res.status(500).send({message: "error!", err})
     })
 })
 

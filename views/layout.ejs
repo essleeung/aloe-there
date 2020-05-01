@@ -12,9 +12,9 @@
 </head>
 
 <body>
-
+    
     <%- include('partials/alerts') %>
-
+    
     <main>
         <%- body %>
     </main>
@@ -34,15 +34,13 @@
                 defaultDate: startDate,
                 setDefaultDate: true,
                 yearRange: 20,
+                format: 'yyyy-mm-dd'
             })
-
             var elems3 = document.querySelectorAll('.timepicker');
-            var instances = M.Timepicker.init(elems3, {
-                autoClose: true
-            })
-
+            var instances3 = M.Timepicker.init(elems3, {});
+            
         })
-
+        
     </script>
     
 </body>

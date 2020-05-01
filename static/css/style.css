@@ -100,7 +100,7 @@ p, .btn {
   min-height: 100vh;
 }
 
-label, input {
+label, input, button, textarea {
   font-family: serif;
 }
 

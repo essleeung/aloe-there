@@ -30,4 +30,14 @@ router.get('/', (req, res) => {
     })  
 })
 
+router.get('/:id', (req,res) => {
+    db.plant.findByPk(req.params.id)
+    .then(plant => {
+        res.render('plants/show', {plant})
+    })
+    .catch(err => {
+        console.log("ERROR in get", err)
+    })  
+})
+
 module.exports = router
