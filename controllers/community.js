@@ -20,7 +20,7 @@ res.render('community/create', {mapURL})
 router.post('/events', (req, res) => {
     db.event.create(req.body)
     .then(() => {
-        res.redirect('/events')
+        res.redirect('/community/events')
     })
     .catch(err => {      
         console.log('Error on creating an event post', err)
