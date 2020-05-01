@@ -8,7 +8,16 @@ router.use(userLogin)
 
 // GET - show all events to user
 router.get('/events', (req, res) => {
-    res.render('community/events')
+    db.event.findAll({
+        order: ['date']
+    })
+    .then(events => {
+        res.render('community/events', {events})
+    })
+    .catch(err => {      
+        console.log('Error on creating an event post', err)
+        res.status(500).send({message: "error!", err})
+    })
 })
 
 // GET - render event form for user to fill in
@@ -26,7 +35,7 @@ router.post('/events', (req, res) => {
         console.log('Error on creating an event post', err)
         res.status(500).send({message: "error!"})
     })
-    })
+})
 
 
 module.exports = router

@@ -99,3 +99,12 @@ p, .btn {
 .whole {
   min-height: 100vh;
 }
+
+label, input {
+  font-family: serif;
+}
+
+#return-to-top {
+ color: teal;
+ z-index: 99;
+}

@@ -7,11 +7,11 @@ module.exports = (sequelize, DataTypes) => {
     endTime: DataTypes.TIME,
     location: DataTypes.STRING,
     content: DataTypes.TEXT, 
-    authorId: DataTypes.INTEGER
+    userId: DataTypes.INTEGER
   }, {});
   event.associate = function(models) {
     // associations can be defined here
-    models.event.belongsTo(models.user)
+    models.event.belongsTo(models.user, {foreignKey: 'userId'})
   };
   return event;
 };

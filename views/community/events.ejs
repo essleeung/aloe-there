@@ -2,7 +2,26 @@
     <%- include('../partials/nav') %>
     <div class="container">
         <h1>Events</h1>
-
+        <div class="row">
+            <% events.forEach(e => { %>
+                <div class="col s12 m7">
+                    <div class="card horizontal">
+                        <div class="card-image">
+                            <img src="https://lorempixel.com/100/190/nature/6">
+                        </div>
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <p><%=e.content%>></p>
+                            </div>
+                            <div class="card-action">
+                                <a href="#"><%=e.title%></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             
+            <% }) %>
+        </div>
 
         <div class="fixed-action-btn">
             <a class="btn-floating btn-large teal" href="/community/events/create">

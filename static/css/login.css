@@ -10,7 +10,7 @@ body {
 .form{
     padding: 30px;
     margin-top: 10vh;
-   background-color: rgba(206, 228, 225, 0.3);
+   background-color: rgba(206, 228, 225, 0.4);
    height: 45vh;
 }
 
@@ -19,6 +19,9 @@ button, input {
     font-size: 1.5em;
 }
 
-.center-align {
+.center-align, input {
     color: white;
+}
+label {
+    color: black;
 }

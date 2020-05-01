@@ -11,21 +11,20 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s3">
+                    <div class="input-field col s2">
                         <input id="date" type="text" name="date" class="datepicker">
                         <label for="date">Date</label>
                     </div>
-                    <div class="input-field col s3">
+                    <div class="input-field col s1">
                         <input id="startTime" type="text" name="startTime" class="timepicker">
                         <label for="startTime">Start Time</label>
                     </div>
-                    <div class="input-field col s3">
+                    <div class="input-field col s1">
                         <input id="endTime" type="text" name="endTime" class="timepicker">
                         <label for="endTime">End Time</label>
                     </div>
-                    <div id="locationField" class="col s3 input-field">
-                        <input id="autocomplete" type="text"
-                            placeholder="Start filling out the address. We'll do the rest!" onFocus="geolocate()">
+                    <div id="locationField" class="col s8 input-field">
+                        <input id="autocomplete" type="text" onFocus="geolocate()">
                         <label for="autocomplete">Location</label>
                     </div>
                     <input class="field" name="location" id="location" type="text"
@@ -50,10 +49,6 @@
 </script>
 <script>
     var placeSearch, autocomplete;
-
-    // var componentForm = {
-    //     address: 'long_name'
-    // };
 
     function initAutocomplete() {
         // Create the autocomplete object, restricting the search predictions to
