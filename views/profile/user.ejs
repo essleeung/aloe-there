@@ -2,7 +2,7 @@
 <div class="whole">
     <%- include('../partials/nav') %>
 <div class="container mt5">
-    <h1><%=currentUser.firstname%>'s Profile</h1>
+    <h1><%=currentUser.firstname%>'s profile.</h1>
 
 <div class="row">
     <div class="col s6" id="profilePic">
@@ -15,16 +15,16 @@
     </div>
     <div class="col s6">
         <p>
-            <strong>Name:</strong> <%= currentUser.firstname%> <%=currentUser.lastname%>
+            <strong>name:</strong> <%= currentUser.firstname%> <%=currentUser.lastname%>
         </p>
         <p>
-            <strong>Username:</strong> <%= currentUser.username%> 
+            <strong>username:</strong> <%= currentUser.username%> 
         </p>
         <p>
-            <strong>Location:</strong> <%=currentUser.city%>, <%=currentUser.country%>
+            <strong>location:</strong> <%=currentUser.city%>, <%=currentUser.country%>
         </p>
         <p>
-            <strong>Member since: </strong><%=moment(currentUser.createdAt).format('MMM Do[,] YYYY')%>
+            <strong>member since: </strong><%=moment(currentUser.createdAt).format('MMM Do[,] YYYY')%>
         </p>
         <p>
             <%=currentUser.bio%>
@@ -32,7 +32,7 @@
     </div>
 </div>
 <hr>
-<h5>Future plant babies: </h5>
+<h5>future plant babies. </h5>
 <div class="row">
  <% wishes.plants.forEach(p => { %>
     <div class="col s3">

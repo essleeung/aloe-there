@@ -9,6 +9,8 @@ let flash = require('connect-flash')
 let layouts = require('express-ejs-layouts')
 let session = require('express-session')
 let methodOverride = require('method-override')
+let rowdy = require('rowdy-logger')
+
 
 //create an app instance
 let app = express()
@@ -25,6 +27,10 @@ app.set('view engine', 'ejs')
 
 //tell express to use layouts module
 app.use(layouts)
+
+
+//set up rowdy logger
+let rowdyResults = rowdy.begin(app)
 
 //tell express to use methodoverride
 app.use(methodOverride('_method'))
@@ -83,4 +89,4 @@ app.get('*', (req,res) => {
 // LISTEN
 // *******************
 //port to listen on
-app.listen(process.env.PORT || 3000)
+app.listen(process.env.PORT || 3000,  function() {rowdyResults.print()})
