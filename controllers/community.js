@@ -17,7 +17,7 @@ router.get('/events', (req, res) => {
     })
     .catch(err => {      
         console.log('Error on creating an event post', err)
-        res.status(500).send({message: "error!"})
+        res.status(500).send({message: "error!, err"})
     })
 })
 
