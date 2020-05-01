@@ -3,24 +3,22 @@
     <div class="container">
         <h1>Events</h1>
         <div class="row">
-            <% events.forEach(e => { %>
-            <div class="col s12 m7">
-                <div class="card horizontal">
-                    <div class="card-image">
-                        <img src="https://lorempixel.com/100/190/nature/6">
-                    </div>
-                    <div class="card-stacked">
-                        <div class="card-content">
-                            <p><%=e.content%>></p>
+            <ul class="collapsible">
+                <% events.forEach(e => { %>
+                    <li>
+                      <div class="collapsible-header"><i class="material-icons">unfold_more</i><strong><%=e.title%></strong>&nbsp | &nbsp <%=moment(e.date).format('MMM Do [,] YYYY')%></div>
+                      <div class="collapsible-body">                       
+                          <p>Time: <%=moment(e.startTime, "HH:mm:ss").format('HH[:]MM A')%>&nbsp-&nbsp<%=moment(e.endTime, "HH:mm:ss").format('HH[:]MM A')%></p>
+                          <p>Location: <%=e.location%></p>
+                          <p><%=e.content%></p>
+                          <% if (e.userId == currentUser.id) { %>
+                            <a href="/community/events/<%=e.id%>/edit" class="btn-floating btn-small "><i class="material-icons tiny">mode_edit</i>edit</a>
+                            <% } %>
                         </div>
-                        <div class="card-action">
-                            <a href="#"><%=e.title%></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    </li>
+                    <% }) %>
+                        
 
-            <% }) %>
         </div>
         <div class="fixed-action-btn">
             <a class="btn-floating btn-large teal" href="/community/events/create">

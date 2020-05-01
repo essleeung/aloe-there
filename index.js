@@ -8,6 +8,7 @@ let express = require('express')
 let flash = require('connect-flash')
 let layouts = require('express-ejs-layouts')
 let session = require('express-session')
+let methodOverride = require('method-override')
 
 //create an app instance
 let app = express()
@@ -24,6 +25,9 @@ app.set('view engine', 'ejs')
 
 //tell express to use layouts module
 app.use(layouts)
+
+//tell express to use methodoverride
+app.use(methodOverride('_method'))
 
 //setup static folder
 app.use(express.static('static'))

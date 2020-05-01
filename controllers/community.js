@@ -1,6 +1,7 @@
 let router = require('express').Router()
 let db = require('../models')
 let userLogin = require('../middleware/userLogin')
+let moment = require('moment')
 let mapURL = `https://maps.googleapis.com/maps/api/js?key=${process.env.GMAP_API}&libraries=places&callback=initAutocomplete` 
 
 
@@ -12,7 +13,7 @@ router.get('/events', (req, res) => {
         order: ['date']
     })
     .then(events => {
-        res.render('community/events', {events, mapURL})
+        res.render('community/events', {events, mapURL, moment})
     })
     .catch(err => {      
         console.log('Error on creating an event post', err)
@@ -22,7 +23,7 @@ router.get('/events', (req, res) => {
 
 // GET - render event form for user to fill in
 router.get('/events/create', (req, res) => {
-    res.render('community/create', {mapURL})
+    res.render('community/create', {mapURL, moment})
 })
 
 // POST - add event form data to database
@@ -37,5 +38,30 @@ router.post('/events', (req, res) => {
     })
 })
 
+//GET- render edit page for current user  to edit their own posts
+router.get('/events/:id/edit', (req, res) => {
+    db.event.findByPk(req.params.id)
+    .then(post => {
+        res.render('community/editEvent', {post, mapURL})
+    })
+    .catch(err => {      
+        console.log('Error on creating an event post', err)
+        res.status(500).send({message: "error!", err})
+    })
+})
+
+//PUT- edit events that user created
+router.put('/events/:id', (req, res) => {
+    db.event.update(req.body, 
+        { where: { id: req.params.id}
+    })
+    .then(() => {
+        res.redirect('/community/events')
+    })
+    .catch(err => {      
+        console.log('Error on creating an event post', err)
+        res.status(500).send({message: "error!", err})
+    })
+})
 
 module.exports = router

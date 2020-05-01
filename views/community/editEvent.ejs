@@ -1,0 +1,91 @@
+<div class="whole">
+    <%- include('../partials/nav') %>
+    <div class="container">
+        <h1>Edit event</h1>
+        <div class="row">
+            <form class="col s12" method="POST" action="/community/events/<%=post.id%>?_method=PUT">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input class="field" id="title" type="text" name="title" value="<%=post.title%>">
+                        <label for="title">Title</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s2">
+                        <input id="date" type="text" name="date" class="datepicker" value="<%=post.date%>">
+                        <label for="date">Date</label>
+                    </div>
+                    <div class="input-field col s1">
+                        <input id="startTime" type="text" name="startTime" class="timepicker" value="<%=post.startTime%>">
+                        <label for="startTime">Start Time</label>
+                    </div>
+                    <div class="input-field col s1">
+                        <input id="endTime" type="text" name="endTime" class="timepicker" value="<%=post.endTime%>">
+                        <label for="endTime">End Time</label>
+                    </div>
+                    <div id="locationField" class="col s8 input-field">
+                        <input id="autocomplete" type="text" onFocus="geolocate()">
+                        <label for="autocomplete">Location</label>
+                    </div>
+                    <input class="field" name="location" id="location" type="text"
+                            placeholder="#" hidden>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea name="content" id="content" class="materialize-textarea"><%=post.content%></textarea>
+                        <label for="content">Details</label>
+                    </div>
+                </div>
+                <input class="field" type="text" name="userId" value="<%=currentUser.id%>" hidden>
+                <button class="btn waves-effect waves-light teal accent-4" type="button"
+                    onclick="this.form.submit()">create</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- script for Google places autocomplete address field  -->
+<script src="<%=mapURL%>" async defer>
+</script>
+<script>
+    var placeSearch, autocomplete;
+
+    function initAutocomplete() {
+        // Create the autocomplete object, restricting the search predictions to
+        // geographical location types.
+        autocomplete = new google.maps.places.Autocomplete(
+            document.getElementById('autocomplete'), { types: ['address'] });
+
+        // Avoid paying for data that you don't need by restricting the set of
+        // place fields that are returned to just the address components.
+        autocomplete.setFields(['formatted_address']);
+
+        // When the user selects an address from the drop-down, populate the
+        // address fields in the form.
+        autocomplete.addListener('place_changed', fillInAddress);
+    }
+
+    function fillInAddress() {
+        // Get the place details from the autocomplete object.
+        var place = autocomplete.getPlace();
+        console.log("PLACE!======", place)
+        document.getElementById('location').value = place.formatted_address;
+
+    }
+
+    // Bias the autocomplete object to the user's geographical location,
+    // as supplied by the browser's 'navigator.geolocation' object.
+    function geolocate() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var geolocation = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                var circle = new google.maps.Circle(
+                    { center: geolocation, radius: position.coords.accuracy });
+                autocomplete.setBounds(circle.getBounds());
+            });
+        }
+    }   
+</script>
