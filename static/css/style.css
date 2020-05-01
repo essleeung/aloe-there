@@ -1,3 +1,8 @@
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
 html, body {
     padding: 0;
     margin: 0;
@@ -20,12 +25,12 @@ html, body {
   width: 50%;
 }
 
-.round-square {
+/* .round-square {
   border-radius: 25px;
 }
 #top-round {
   border-radius: 25px 25px 0 0;
-}
+} */
 
 .page-footer {
   background-color: rgba(0,0,0,0.7);
@@ -64,11 +69,16 @@ p, .btn {
 .flash_message {
   position: fixed;
   z-index: 99999;
-  min-width: 88%;
+  min-width: 60%;
+  height: auto;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  margin-top: 2%;
 }
-.alert {
-  padding: 0;
-  margin: 0 auto;
+.alert{
+  margin: 0;
 }
 
 .chip_message_alert,
@@ -76,7 +86,8 @@ p, .btn {
   text-align: center;
   padding-top: 10px !important;
   padding-bottom: 10px !important;
-  min-width: 88%;
+  min-width: 60%;
+  margin: 0 auto;
   min-height: 50px;
   font-size: 1em;
   color: white;
@@ -104,7 +115,3 @@ label, input, button, textarea {
   font-family: serif;
 }
 
-#return-to-top {
- color: teal;
- z-index: 99;
-}

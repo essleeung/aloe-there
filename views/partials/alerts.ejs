@@ -1,6 +1,6 @@
 <!-- Error alerts -->
 <% if (alerts && alerts.error) { %>
-<div class="container align-center">
+
     <div class="flash_message">
         <% alerts.error.forEach(e => { %>
         <div class="chip chip_message_alert">
@@ -8,7 +8,6 @@
         </div>
         <% }) %>
     </div>
-</div>
 <% } %>
 
 <!-- success alerts -->

@@ -1,0 +1,38 @@
+#return-to-top {
+    color: teal;
+    z-index: 99;
+   }
+
+   .card-image img {
+    filter: grayscale(50%);
+    -webkit-filter: grayscale(50%); 
+   }
+   .card-image img:hover {
+    filter: none;
+    -webkit-filter: grayscale(0%);
+   }
+
+   h1 {
+       color: white;
+       text-transform: lowercase;
+   }
+   
+   body {
+       background-color: black;
+   }
+
+   a {
+       text-transform: lowercase;
+       color: black;
+   }
+   a:hover {
+       color: teal;
+   }
+   .btn {
+       color: rgba(0,105,92,0.5)
+   }
+
+   .sci-name, .desc, .care {
+       color: white;
+       text-transform: lowercase;
+   }

@@ -1,9 +1,27 @@
+<link rel="stylesheet" href="/css/plantopedia.css">
 <div class="whole">
     <%- include('../partials/nav') %>
     <div class="container">
 
             <h1><%=plant.commonName%></h1>
-            <p><em><%=plant.sciName%></em></p>
-
+            <p class="sci-name"><em><%=plant.sciName%></em></p>
+            <p class="desc"><%=plant.description%></p>
+            <hr>
+            <div class="row care">
+                <div class="col s4">
+                    <p>Location:</p>
+                </div>
+                <div class="col s8">
+                    <p><%=plant.location%></p>
+                </div>
+            </div>
+            <div class="row care">
+                <div class="col s4">
+                    <p>Care:</p>
+                </div>
+                <div class="col s8">
+                    <p><%=plant.care%></p>
+                </div>
+            </div>
     </div>
 </div>
