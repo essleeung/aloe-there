@@ -9,58 +9,68 @@ router.use(userLogin)
 
 //GET /profile/user
 //NOTE: protect this route from users who are not logged in
-router.get('/user', (req,res) => {
-    res.render('profile/user', {moment})
+router.get('/user', (req, res) => {
+    db.user.findByPk((req.user.id), {
+        include: [db.plant]
+    })
+    .then(wishes => {
+        console.log("PLANTS?", wishes)
+        res.render('profile/user', { moment, wishes })
+    })
+    .catch(err => {
+        console.log('Error', err)
+        res.status(500).send({ message: "error!", err })
+    })
 })
 
 //GET /profile/guest/userId
 router.get('/guest/:id', (req, res) => {
     db.user.findByPk(req.params.id)
-    .then(userProfile => {
-        res.render('profile/guest', {moment, userProfile})
-    })
-    .catch(err => {
-        console.log(err)
-        res.render('error')
-    })
+        .then(userProfile => {
+            res.render('profile/guest', { moment, userProfile })
+        })
+        .catch(err => {
+            console.log(err)
+            res.render('error')
+        })
 })
 
 //GET /profile/admin - a special profile for admins
 // NOTE: protect this route from users who are not logged in and users who are NOT admins
-router.get('/admin', adminLogin, (req,res) => {
+router.get('/admin', adminLogin, (req, res) => {
     db.user.findAll()
-    .then(users => {
-        res.render('profile/admin', {moment, users})
-    })
+        .then(users => {
+            res.render('profile/admin', { moment, users })
+        })
 })
 
 //POST /profile/user/- add plant to wishlist
-router.post('/user', (req,res) => {
+router.post('/user', (req, res) => {
     console.log(req.body)
     db.wishlist.create(req.body)
-    .then(() => {
-        res.send({message: "success!"})
-    })
-    .catch(err => {      
-        console.log('Error on creating wishlist', err)
-        res.status(500).send({message: "error!"})
-    })
+        .then(() => {
+            res.send({ message: "success!" })
+        })
+        .catch(err => {
+            console.log('Error on creating wishlist', err)
+            res.status(500).send({ message: "error!", err })
+        })
 })
 
 //POST /profile/user - remove plant from wishlist
 
-router.delete('/user/:id', (req,res) => {
+router.delete('/user/:id', (req, res) => {
     db.wishlist.destroy({
-        where: {plantId: req.params.id}
+        where: { plantId: req.params.id }
     })
-    .then(() => {
-        res.send({message: "success!"})
-    })
-    .catch(err => {
-        
-        console.log('Error on deleting wishlist', err)
-        res.status(500).send({message: "error!"})
-    })
+        .then(() => {
+            res.send({ message: "success!" })
+        })
+        .catch(err => {
+
+            console.log('Error on deleting wishlist', err)
+            res.status(500).send({ message: "error!" })
+        })
 })
 
 
