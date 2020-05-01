@@ -17,8 +17,8 @@ button, input, label {
 
 .form{
     padding: 10px 20px 10px;
-    margin-top: 5%;
     background-color: rgba(206, 228, 225, 0.7);
+    margin-bottom: 5%;
 }
 
 .title {

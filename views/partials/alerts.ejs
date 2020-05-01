@@ -2,11 +2,11 @@
 <% if (alerts && alerts.error) { %>
 <div class="container align-center">
     <div class="flash_message">
+        <% alerts.error.forEach(e => { %>
         <div class="chip chip_message_alert">
-            <% alerts.error.forEach(e => { %>
             <p class="alert">Error: <%= e %><i class="close material-icons">close</i></p>
-            <% }) %>
         </div>
+        <% }) %>
     </div>
 </div>
 <% } %>
@@ -15,11 +15,11 @@
 <% if (alerts && alerts.success) { %>
 <div class="container">
     <div class="flash_message">
+        <% alerts.success.forEach(e => { %>
         <div class="chip chip_message_success">
-            <% alerts.success.forEach(e => { %>
             <p class="alert"><%= e %><i class="close material-icons">close</i></p>
-            <% }) %>
         </div>
+        <% }) %>
     </div>
 </div>
 <% } %>

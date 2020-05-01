@@ -14,7 +14,7 @@ router.get('/login', (req, res) => {
 
 // POST /auth/login - this is a place for the login form to post to
 router.post('/login', passport.authenticate('local', {
-    successFlash: 'successful login. welcome back',
+    successFlash: 'successful login.',
     successRedirect: '/profile/user', 
     failureFlash: 'invalid credentials',
     failureRedirect: '/auth/login'

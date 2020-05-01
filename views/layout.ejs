@@ -12,9 +12,9 @@
 </head>
 
 <body>
-    
+
     <%- include('partials/alerts') %>
-    
+
     <main>
         <%- body %>
     </main>
@@ -26,7 +26,7 @@
             var instances = M.Sidenav.init(elems, {})
 
             var startDate = new Date()
-            startDate.setFullYear(startDate.getFullYear() - 30)
+            startDate.setFullYear(startDate.getFullYear())
 
             var elems2 = document.querySelectorAll('.datepicker')
             var instances2 = M.Datepicker.init(elems2, {
@@ -34,11 +34,13 @@
                 defaultDate: startDate,
                 setDefaultDate: true,
                 yearRange: 20,
-                maxDate: (new Date())
             })
-            
+
+            var elems3 = document.querySelectorAll('.timepicker');
+            var instances = M.Timepicker.init(elems3, {})
+
         })
-        
+
     </script>
     
 </body>

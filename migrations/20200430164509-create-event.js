@@ -14,11 +14,20 @@ module.exports = {
       date: {
         type: Sequelize.DATE
       },
-      time: {
+      startTime: {
         type: Sequelize.TIME
+      },
+      endTime: {
+        type: Sequelize.TIME
+      },
+      location: {
+        type: Sequelize.STRING
       },
       content: {
         type: Sequelize.TEXT
+      },
+      authorId: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

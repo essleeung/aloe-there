@@ -61,6 +61,7 @@ module.exports = (sequelize, DataTypes) => {
   user.associate = function (models) {
     // associations can be defined here
     models.user.belongsToMany(models.plant, {through: "wishlist"})
+    models.user.hasMany(models.event)
   };
 
   user.prototype.validPassword = function (typedInPassword) {
