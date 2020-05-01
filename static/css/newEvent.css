@@ -1,0 +1,27 @@
+body {
+    background-image: linear-gradient(rgb(0,0,0,0.4), rgba(0,0,0,0.4)), url(../assets/annie-spratt-gSQbip5HHuc-unsplash.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+form{
+    padding: 20px !important;
+    background-color: rgba(206, 228, 225, 0.4);
+    margin-bottom: 5%;
+}
+
+
+.field::placeholder, 
+#autocomplete::placeholder, 
+#autocomplete, 
+input-field, 
+input, label {
+    font-family: serif;
+    color: black;
+}
+
+.title {
+    color: white;
+}

@@ -1,10 +1,11 @@
+<link rel="stylesheet" href="/css/newEvent.css">
 
 <div class="whole">
     <%- include('../partials/nav') %>
     <div class="container">
-        <h1>new event.</h1>
+        <h1 class="title">new event.</h1>
         <div class="row">
-            <form class="col s12" method="POST" action="/community/events">
+            <form class="col s12 form" method="POST" action="/community/events">
                 <div class="row">
                     <div class="input-field col s12">
                         <input class="field" id="title" type="text" name="title">

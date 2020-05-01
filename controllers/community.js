@@ -77,4 +77,9 @@ router.delete('/events/:id', (req,res) => {
     })
 })
 
+//GET- future trading functionality will go here
+router.get('/trade', (req, res) => {
+    res.render('comingSoon')
+})
+
 module.exports = router
