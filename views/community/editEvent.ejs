@@ -1,6 +1,7 @@
+<link rel="stylesheet" href="/css/editEvent.css">
 <div class="whole">
     <%- include('../partials/nav') %>
-    <div class="container">
+    <div class="container form">
         <h1>edit event.</h1>
         <div class="row">
             <form class="col s12" method="POST" action="/community/events/<%=post.id%>?_method=PUT">
@@ -16,7 +17,8 @@
                         <label for="date">Date</label>
                     </div>
                     <div class="input-field col s1">
-                        <input id="startTime" type="text" name="startTime" class="timepicker" value="<%=post.startTime%>">
+                        <input id="startTime" type="text" name="startTime" class="timepicker"
+                            value="<%=post.startTime%>">
                         <label for="startTime">Start Time</label>
                     </div>
                     <div class="input-field col s1">
@@ -27,8 +29,7 @@
                         <input id="autocomplete" type="text" onFocus="geolocate()">
                         <label for="autocomplete">Location</label>
                     </div>
-                    <input class="field" name="location" id="location" type="text"
-                            placeholder="#" hidden>
+                    <input class="field" name="location" id="location" type="text" placeholder="#" hidden>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
@@ -37,14 +38,19 @@
                     </div>
                 </div>
                 <input class="field" type="text" name="userId" value="<%=currentUser.id%>" hidden>
-                <button class="btn waves-effect waves-light teal accent-4" type="button"
-                    onclick="this.form.submit()">create</button>
+                <div class="row">
+                    <button class="btn waves-effect waves-light grey accent-4 col offset-s9 s1"  type="button"
+                        onclick="this.form.submit()">update</button>
+            </form>
+            <form action="/community/events/<%=post.id%>?_method=DELETE" method="POST">
+                <input type="button" onclick="this.form.submit()" value="delete" class="btn red col s1">
             </form>
         </div>
     </div>
+</div>
 
 
-    <!-- script for Google places autocomplete address field  -->
+<!-- script for Google places autocomplete address field  -->
 <script src="<%=mapURL%>" async defer>
 </script>
 <script>

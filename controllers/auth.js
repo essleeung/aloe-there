@@ -76,7 +76,7 @@ router.post('/signup', (req, res, next) => {
             }
             else {
                 // Generic message for any other issue
-                req.flash('error', 'Server error')
+                req.flash('error', 'server error')
 
                 // Redirect back to sign up
                 res.redirect('/auth/signup')

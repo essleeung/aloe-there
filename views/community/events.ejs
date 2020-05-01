@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="/css/eventHome.css">
+
+
 <div class="whole">
     <%- include('../partials/nav') %>
     <div class="container">
@@ -5,19 +8,26 @@
         <div class="row">
             <ul class="collapsible">
                 <% events.forEach(e => { %>
-                    <li>
-                      <div class="collapsible-header"><i class="material-icons">unfold_more</i><strong><%=e.title%></strong>&nbsp | &nbsp <%=moment(e.date).format('MMM Do [,] YYYY')%></div>
-                      <div class="collapsible-body">                       
-                          <p>Time: <%=moment(e.startTime, "HH:mm:ss").format('HH[:]MM A')%>&nbsp-&nbsp<%=moment(e.endTime, "HH:mm:ss").format('HH[:]MM A')%></p>
-                          <p>Location: <%=e.location%></p>
-                          <p><%=e.content%></p>
-                          <% if (e.userId == currentUser.id) { %>
-                            <a href="/community/events/<%=e.id%>/edit" class="btn-floating btn-small "><i class="material-icons tiny">mode_edit</i>edit</a>
-                            <% } %>
+                <li>
+                    <div class="collapsible-header"><i
+                            class="material-icons">unfold_more</i><strong><%=e.title%></strong>&nbsp | &nbsp
+                        <%=moment(e.date).format('MMM Do [,] YYYY')%></div>
+                    <div class="collapsible-body">
+                        <p>Time:
+                            <%=moment(e.startTime, "HH:mm:ss").format('HH[:]MM A')%>&nbsp-&nbsp<%=moment(e.endTime, "HH:mm:ss").format('HH[:]MM A')%>
+                        </p>
+                        <p>Location: <%=e.location%></p>
+                        <p><%=e.content%></p>
+                        <% if (e.userId == currentUser.id) { %>
+                        <div class="row">
+                            <a href="/community/events/<%=e.id%>/edit"><span data-badge-caption="edit" class="badge"><i
+                                class="material-icons tiny">mode_edit</i></span></a>
                         </div>
-                    </li>
-                    <% }) %>
-                        
+                        <% } %>
+                    </div>
+                </li>
+                <% }) %>
+
 
         </div>
         <div class="fixed-action-btn">
@@ -73,5 +83,5 @@
         }
     }
 
-    
+
 </script>

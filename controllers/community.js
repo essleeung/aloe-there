@@ -64,4 +64,17 @@ router.put('/events/:id', (req, res) => {
     })
 })
 
+//DELETE -delete events that user created
+router.delete('/events/:id', (req,res) => {
+    db.event.destroy({
+        where: { id: req.params.id}
+    }).then(() => {
+        res.redirect('/community/events')
+    })
+    .catch(err => {      
+        console.log('Error on creating an event post', err)
+        res.status(500).send({message: "error!", err})
+    })
+})
+
 module.exports = router
