@@ -2,7 +2,7 @@
 This is an Express app with local user authentication designed for users to create a community to share events, plant care tips and trade seeds, clippings or plants of their choosing. Currently users can reference the plantopedia and save the plants they hope to acquire and post events in their area. 
 
 In the future, we hope to add a plant trading functionality to do some match-making to help users acquire future plant babies 
-**[Live site can be found here]** (https://aloe-there.herokuapp.com/}
+**Live site can be found here:** https://aloe-there.herokuapp.com/
 
 ## Built with
 * Express
