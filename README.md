@@ -68,51 +68,31 @@ In the future, we hope to add a plant trading functionality to do some match-mak
 
 
 ## Included Routes
-┌────────┬────────────────────────────┐
-| Method │ Path                       │
-├────────┼────────────────────────────┤
-│ GET    │ /auth/login                │
-├────────┼────────────────────────────┤
-│ POST   │ /auth/login                │
-├────────┼────────────────────────────┤
-│ GET    │ /auth/signup               │
-├────────┼────────────────────────────┤
-│ POST   │ /auth/signup               │
-├────────┼────────────────────────────┤
-│ GET    │ /auth/logout               │
-├────────┼────────────────────────────┤
-│ GET    │ /profile/user              │
-├────────┼────────────────────────────┤
-│ GET    │ /profile/guest/:id         │
-├────────┼────────────────────────────┤
-│ GET    │ /profile/admin             │
-├────────┼────────────────────────────┤
-│ POST   │ /profile/user              │
-├────────┼────────────────────────────┤
-│ DELETE │ /profile/user/:id          │
-├────────┼────────────────────────────┤
-│ GET    │ /plantopedia               │
-├────────┼────────────────────────────┤
-│ GET    │ /plantopedia/:id           │
-├────────┼────────────────────────────┤
-│ GET    │ /community/events          │
-├────────┼────────────────────────────┤
-│ GET    │ /community/events/create   │
-├────────┼────────────────────────────┤
-│ POST   │ /community/events          │
-├────────┼────────────────────────────┤
+
+| Method │ Path   │
+|--------|--------------|
+│ GET    │ /auth/login │
+│ POST   │ /auth/login │
+│ GET    │ /auth/signup │
+│ POST   │ /auth/signup │
+│ GET    │ /auth/logout │
+│ GET    │ /profile/user │
+│ GET    │ /profile/guest/:id │
+│ GET    │ /profile/admin │
+│ POST   │ /profile/user │
+│ DELETE │ /profile/user/:id │
+│ GET    │ /plantopedia │
+│ GET    │ /plantopedia/:id │
+│ GET    │ /community/events │
+│ GET    │ /community/events/create │
+│ POST   │ /community/events │
 │ GET    │ /community/events/:id/edit │
-├────────┼────────────────────────────┤
-│ PUT    │ /community/events/:id      │
-├────────┼────────────────────────────┤
-│ DELETE │ /community/events/:id      │
-├────────┼────────────────────────────┤
-│ GET    │ /community/trade           │
-├────────┼────────────────────────────┤
-│ GET    │ /                          │
-├────────┼────────────────────────────┤
-│ GET    │ *                          |
-└────────┴────────────────────────────┘
+│ PUT    │ /community/events/:id │
+│ DELETE │ /community/events/:id │
+│ GET    │ /community/trade │
+│ GET    │ / │
+│ GET    │ * |
+
 
 ## Directions for use
 
