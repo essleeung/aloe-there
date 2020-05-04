@@ -31,7 +31,7 @@ const scrape = () => {
                         })
                             .then(
                                 plants.forEach(p => {
-                                    // TUpdate the plant database with the new plant info
+                                    // Update the plant database with the new plant info
                                     // db.plant.update(plants, where)
                                     // .then(() => { done() })
                                     db.plant.update(p, {
