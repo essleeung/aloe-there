@@ -3,6 +3,7 @@ This is an Express app with local user authentication designed for users to crea
 
 In the future, we hope to add a plant trading functionality to do some match-making to help users acquire future plant babies 
 **Live site can be found here:** https://aloe-there.herokuapp.com/
+- demo account: aloe@there.com (aloethere)
 
 ## Built with
 * Express
