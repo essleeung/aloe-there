@@ -5,27 +5,27 @@
     <div class="container">
         <h1 class="title">new event.</h1>
         <div class="row">
-            <form class="col sm-12 form" method="POST" action="/community/events">
+            <form class="col s12 form" method="POST" action="/community/events">
                 <div class="row">
-                    <div class="input-field col sm-12">
+                    <div class="input-field col s12">
                         <input class="field" id="title" type="text" name="title">
                         <label for="title">Title</label>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col sm-2">
+                    <div class="input-field col s2">
                         <input id="date" type="text" name="date" class="datepicker">
                         <label for="date">Date</label>
                     </div>
-                    <div class="input-field col sm-1">
+                    <div class="input-field col s1">
                         <input id="startTime" type="text" name="startTime" class="timepicker">
                         <label for="startTime">Start Time</label>
                     </div>
-                    <div class="input-field col sm-1">
+                    <div class="input-field col s1">
                         <input id="endTime" type="text" name="endTime" class="timepicker">
                         <label for="endTime">End Time</label>
                     </div>
-                    <div id="locationField" class="col sm-8 input-field">
+                    <div id="locationField" class="col s8 input-field">
                         <input id="autocomplete" type="text" onFocus="geolocate()">
                         <label for="autocomplete">Location</label>
                     </div>
