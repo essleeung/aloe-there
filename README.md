@@ -69,8 +69,8 @@ In the future, we hope to add a plant trading functionality to do some match-mak
 
 ## Included Routes
 
-| Method │ Path │
-|------------|--------------------|
+|Method| Path |
+|-------|------------|
 │ GET │ `/auth/login` │
 │ POST │ `/auth/login` │
 │ GET │ `/auth/signup` │
