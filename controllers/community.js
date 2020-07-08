@@ -42,12 +42,7 @@ router.post('/events', (req, res) => {
 router.get('/events/:id/edit', (req, res) => {
     db.event.findByPk(req.params.id)
     .then(post => {
-        if (req.user.id === post.userId) {
-            res.render('community/editEvent', {post, mapURL})
-        } else {
-            res.redirect('/community/events')
-        }
-        
+        res.render('community/editEvent', {post, mapURL})
     })
     .catch(err => {      
         console.log('Error on creating an event post', err)
