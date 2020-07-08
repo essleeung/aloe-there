@@ -2,6 +2,8 @@
 This is an Express app with local user authentication designed for users to create a community to share events, plant care tips and trade seeds, clippings or plants of their choosing. Currently users can reference the plantopedia and save the plants they hope to acquire and post events in their area. 
 
 In the future, we hope to add a plant trading functionality to do some match-making to help users acquire future plant babies 
+**Live site can be found here:** https://aloe-there.herokuapp.com/
+- demo account: aloe@there.com (aloethere)
 
 ## Built with
 * Express
@@ -69,29 +71,29 @@ In the future, we hope to add a plant trading functionality to do some match-mak
 
 ## Included Routes
 
-|Method| Path |
+| Method| Path |
 |-------|------------|
-│ GET │ `/auth/login` │
-│ POST │ `/auth/login` │
-│ GET │ `/auth/signup` │
-│ POST │ `/auth/signup` │
-│ GET │ `/auth/logout` │
-│ GET │ `/profile/user` │
-│ GET │ `/profile/guest/:id` │
-│ GET | `/profile/admin` │
-│ POST │ `/profile/user` │
-│ DELETE │ `/profile/user/:id` │
-│ GET │ `/plantopedia `│
-│ GET │ `/plantopedia/:id` │
-│ GET │ `/community/events` │
-│ GET │ `/community/events/create` │
-│ POST │ `/community/events` │
-│ GET │ `/community/events/:id/edit` │
-│ PUT │ `/community/events/:id` │
-│ DELETE │ `/community/events/:id` │
-│ GET │ `/community/trade` │
-│ GET │ `/` │
-│ GET │ `*` |
+|GET| `/auth/login` |
+|POST| `/auth/login` |
+|GET| `/auth/signup` |
+|POST| `/auth/signup` |
+|GET| `/auth/logout` |
+|GET| `/profile/user` |
+|GET| `/profile/guest/:id` |
+|GET| `/profile/admin` |
+|POST| `/profile/user` |
+|DELETE| `/profile/user/:id` |
+|GET| `/plantopedia` |
+|GET| `/plantopedia/:id` |
+|GET| `/community/events` |
+|GET| `/community/events/create` |
+|POST| `/community/events` |
+|GET| `/community/events/:id/edit` |
+|PUT| `/community/events/:id` |
+|DELETE| `/community/events/:id` |
+|GET| `/community/trade` |
+|GET| `/` |
+|GET| `*` |
 
 
 ## Directions for use
